@@ -1,4 +1,9 @@
-const { ConstructLibraryCdktf } = require('projen');
+const { ConstructLibraryCdktf, JsonFile } = require('projen');
+
+const snowflakeTFProviderVersion = '0.25.15';
+const cdktfVersion = '0.5.0';
+const CDKTF_JSON_FILE = 'cdktf.json';
+
 const project = new ConstructLibraryCdktf({
   name: 'cdktf-snowflake',
   authorName: 'Bryan Galvin',
@@ -9,8 +14,8 @@ const project = new ConstructLibraryCdktf({
   repositoryUrl: 'https://github.com/bcgalvin/cdktf-snowflake.git',
   license: 'Apache-2.0',
   defaultReleaseBranch: 'main',
-  cdktfVersion: '0.5.0',
-  deps: ['cdktf-cli'],
+  cdktfVersion: cdktfVersion,
+  bundledDeps: [`cdktf-cli@^${cdktfVersion}`],
   codeCov: true,
   minNodeVersion: '12.13.0',
   releaseEveryCommit: true,
@@ -30,7 +35,19 @@ const project = new ConstructLibraryCdktf({
     '.gen'
   ],
 });
+
 project.tasks.tryFind('build').prependExec('rm -rf ./src/* && cdktf get && cp -R .gen/providers/snowflake/* ./src/');
+project.tasks.tryFind('build').prependExec('yarn global add cdktf-cli')
 project.tasks.tryFind('build').exec('rm README.md && cat API.md >> README.md')
-// project.tasks.tryFind('package').prependExec('yarn global add cdktf-cli');
+
+new JsonFile(project, CDKTF_JSON_FILE, {
+  obj: {
+    language: 'typescript',
+    app: 'echo noop',
+    terraformProviders: [
+      `chanzuckerberg/snowflake@~> ${snowflakeTFProviderVersion}`
+    ],
+  },
+});
+
 project.synth();

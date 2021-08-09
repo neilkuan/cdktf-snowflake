@@ -51,6 +51,7 @@ yarn.lock
 !/.projenrc.js
 !/API.md
 !/LICENSE
+!/cdktf.json
 !/package.json
 !/src
 !/test

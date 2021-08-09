@@ -73,6 +73,9 @@
       "description": "Full release build (test+compile)",
       "steps": [
         {
+          "exec": "yarn global add cdktf-cli"
+        },
+        {
           "exec": "rm -rf ./src/* && cdktf get && cp -R .gen/providers/snowflake/* ./src/"
         },
         {
@@ -165,7 +168,7 @@
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/jest @types/node cdktf constructs jest jest-junit jsii jsii-diff jsii-docgen jsii-pacmak npm-check-updates standard-version ts-jest typescript cdktf constructs cdktf-cli"
+          "exec": "yarn upgrade @types/jest @types/node cdktf constructs jest jest-junit jsii jsii-diff jsii-docgen jsii-pacmak npm-check-updates standard-version ts-jest typescript cdktf-cli cdktf constructs"
         },
         {
           "exec": "npx projen"

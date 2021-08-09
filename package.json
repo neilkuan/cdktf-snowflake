@@ -57,7 +57,9 @@
   "dependencies": {
     "cdktf-cli": "^0.5.0"
   },
-  "bundledDependencies": [],
+  "bundledDependencies": [
+    "cdktf-cli"
+  ],
   "keywords": [
     "cdk"
   ],

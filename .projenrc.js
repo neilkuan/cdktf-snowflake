@@ -25,6 +25,7 @@ const project = new ConstructLibraryCdktf({
     'package-lock.json',
     'yarn.lock',
     '/test/__snapshots__/',
+    '.gen'
   ],
 });
 project.tasks.tryFind('build').prependExec('rm -rf ./src/* && cdktf get && cp -R .gen/providers/snowflake/* ./src/');

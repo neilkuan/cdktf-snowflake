@@ -10,6 +10,7 @@ const project = new ConstructLibraryCdktf({
   license: 'Apache-2.0',
   defaultReleaseBranch: 'main',
   cdktfVersion: '0.5.0',
+  deps: ['cdktf-cli'],
   codeCov: true,
   releaseEveryCommit: true,
   releaseToNpm: true,
@@ -29,4 +30,6 @@ const project = new ConstructLibraryCdktf({
   ],
 });
 project.tasks.tryFind('build').prependExec('rm -rf ./src/* && cdktf get && cp -R .gen/providers/snowflake/* ./src/');
+project.tasks.tryFind('build').exec('rm README.md && cat API.md >> README.md')
+// project.tasks.tryFind('package').prependExec('yarn global add cdktf-cli');
 project.synth();

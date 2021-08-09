@@ -12,6 +12,7 @@ const project = new ConstructLibraryCdktf({
   cdktfVersion: '0.5.0',
   deps: ['cdktf-cli'],
   codeCov: true,
+  minNodeVersion: '12.13.0',
   releaseEveryCommit: true,
   releaseToNpm: true,
   python: {

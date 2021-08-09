@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@types/jest": "^26.0.24",
-    "@types/node": "^10.17.0",
+    "@types/node": "^12.13.0",
     "cdktf": "0.5.0",
     "constructs": "3.3.75",
     "jest": "^27.0.6",
@@ -61,6 +61,9 @@
   "keywords": [
     "cdk"
   ],
+  "engines": {
+    "node": ">= 12.13.0"
+  },
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "version": "0.0.0",

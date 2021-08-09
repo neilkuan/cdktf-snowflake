@@ -73,10 +73,7 @@
       "description": "Full release build (test+compile)",
       "steps": [
         {
-          "exec": "yarn global add cdktf-cli"
-        },
-        {
-          "exec": "rm -rf ./src/* && cdktf get && cp -R .gen/providers/snowflake/* ./src/"
+          "exec": "rm -rf ./src/* && npx cdktf get && cp -R .gen/providers/snowflake/* ./src/"
         },
         {
           "exec": "npx projen"

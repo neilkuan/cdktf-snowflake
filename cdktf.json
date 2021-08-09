@@ -1,0 +1,7 @@
+{
+  "language": "typescript",
+  "app": "echo noop",
+  "terraformProviders": [
+    "chanzuckerberg/snowflake@~> 0.25.15"
+  ]
+}

@@ -73,9 +73,6 @@
       "description": "Full release build (test+compile)",
       "steps": [
         {
-          "exec": "rm -rf ./src/* && npx cdktf get && cp -R .gen/providers/snowflake/* ./src/"
-        },
-        {
           "exec": "npx projen"
         },
         {
@@ -86,9 +83,6 @@
         },
         {
           "spawn": "package"
-        },
-        {
-          "exec": "rm README.md && cat API.md >> README.md"
         }
       ]
     },
@@ -263,6 +257,22 @@
       "steps": [
         {
           "exec": "jsii-docgen"
+        }
+      ]
+    },
+    "build-cdktf": {
+      "name": "build-cdktf",
+      "steps": [
+        {
+          "exec": "rm -rf ./src/* && npx cdktf get && cp -R .gen/providers/snowflake/* ./src/ && rm -rf .gen"
+        }
+      ]
+    },
+    "update-docs": {
+      "name": "update-docs",
+      "steps": [
+        {
+          "exec": "rm README.md && cat API.md >> README.md"
         }
       ]
     },

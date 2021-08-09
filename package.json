@@ -25,6 +25,8 @@
     "publish:npm": "npx projen publish:npm",
     "publish:pypi": "npx projen publish:pypi",
     "docgen": "npx projen docgen",
+    "build-cdktf": "npx projen build-cdktf",
+    "update-docs": "npx projen update-docs",
     "release": "npx projen release",
     "projen": "npx projen"
   },

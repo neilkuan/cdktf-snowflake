@@ -8,7 +8,6 @@ const project = new ConstructLibraryCdktf({
   name: 'cdktf-snowflake',
   authorName: 'Bryan Galvin',
   authorEmail: 'bcgalvin@gmail.com',
-  repository: 'git@github.com:bcgalvin/cdktf-snowflake.git',
   repositoryUrl: 'https://github.com/bcgalvin/cdktf-snowflake',
   description: 'High level cdktf construct to provision snowflake resources',
   defaultReleaseBranch: 'main',

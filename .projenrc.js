@@ -9,9 +9,9 @@ const project = new ConstructLibraryCdktf({
   authorName: 'Bryan Galvin',
   authorEmail: 'bcgalvin@gmail.com',
   repository: 'git@github.com:bcgalvin/cdktf-snowflake.git',
+  repositoryUrl: 'https://github.com/bcgalvin/cdktf-snowflake',
   description: 'High level cdktf construct to provision snowflake resources',
   defaultReleaseBranch: 'main',
-  repositoryUrl: 'https://github.com/bcgalvin/cdktf-snowflake.git',
   license: 'Apache-2.0',
   defaultReleaseBranch: 'main',
   cdktfVersion: cdktfVersion,
@@ -35,6 +35,7 @@ const project = new ConstructLibraryCdktf({
     '.gen'
   ],
 });
+
 project.addTask('build-cdktf').exec('rm -rf ./src/* && npx cdktf get && cp -R .gen/providers/snowflake/* ./src/ && rm -rf .gen')
 project.addTask('update-docs').exec('rm README.md && cat API.md >> README.md')
 

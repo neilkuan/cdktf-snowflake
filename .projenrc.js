@@ -15,7 +15,6 @@ const project = new ConstructLibraryCdktf({
   license: 'Apache-2.0',
   defaultReleaseBranch: 'main',
   cdktfVersion: cdktfVersion,
-  bundledDeps: [`cdktf-cli@^${cdktfVersion}`],
   codeCov: true,
   minNodeVersion: '12.13.0',
   releaseEveryCommit: true,

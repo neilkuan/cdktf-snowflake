@@ -67,11 +67,6 @@
       "type": "build"
     },
     {
-      "name": "cdktf-cli",
-      "version": "^0.5.0",
-      "type": "bundled"
-    },
-    {
       "name": "cdktf",
       "version": "^0.5.0",
       "type": "peer"

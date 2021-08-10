@@ -14,6 +14,7 @@
 .gen
 .jsii
 .nyc_output
+.vscode
 .yarn-integrity
 /coverage
 /dist
@@ -43,7 +44,7 @@ yarn.lock
 !/.github/workflows/build.yml
 !/.github/workflows/release.yml
 !/.github/workflows/stale.yml
-!/.github/workflows/upgrade-dependencies.yml
+!/.github/workflows/upgrade.yml
 !/.mergify.yml
 !/.npmignore
 !/.projen/deps.json

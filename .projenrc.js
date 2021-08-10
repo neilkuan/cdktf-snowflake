@@ -30,7 +30,8 @@ const project = new ConstructLibraryCdktf({
     'package-lock.json',
     'yarn.lock',
     '/test/__snapshots__/',
-    '.gen'
+    '.gen',
+    '.vscode'
   ],
 });
 

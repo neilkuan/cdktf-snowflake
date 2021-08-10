@@ -4,7 +4,9 @@ import os
 from cdktf import App, TerraformStack
 from cdktf_snowflake import SnowflakeProvider, User
 from constructs import Construct
+from dotenv import load_dotenv, find_dotenv
 
+load_dotenv(find_dotenv())
 
 class SnowflakeStack(TerraformStack):
     def __init__(self, scope: Construct, ns: str):

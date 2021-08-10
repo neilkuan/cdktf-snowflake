@@ -4,4 +4,6 @@ imports/*
 .terraform
 cdktf.out
 cdktf.log
+.env
+.idea
 *terraform.*.tfstate*

@@ -9,3 +9,4 @@ python_version = "3"
 [packages]
 cdktf = "~=0.5.0"
 cdktf-snowflake = "~=0.0.2"
+python-dotenv = "*"
